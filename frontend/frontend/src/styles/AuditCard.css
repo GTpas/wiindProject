@@ -1,0 +1,46 @@
+.audit-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  background-color: #f9f9f9;
+  max-width: 400px;
+}
+
+.audit-card h3 {
+  color: #0056b3;
+}
+
+.validation-options label {
+  display: block;
+  margin: 8px 0;
+}
+
+.comments-section textarea {
+  width: 100%;
+  height: 80px;
+  margin: 8px 0;
+}
+
+.photo-upload {
+  margin: 8px 0;
+}
+
+.uploaded-image {
+  width: 100px;
+  height: auto;
+  margin-top: 8px;
+}
+
+button {
+  background-color: #0056b3;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #004494;
+}

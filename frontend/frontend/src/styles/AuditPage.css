@@ -1,0 +1,10 @@
+.audit-page {
+  text-align: center;
+  margin: 16px;
+}
+
+.audit-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

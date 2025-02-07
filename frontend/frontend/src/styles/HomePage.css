@@ -1,0 +1,90 @@
+/* Général */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* En-tête */
+.homepage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #0056b3;
+  color: white;
+}
+
+.logo-container .logo {
+  height: 50px;
+}
+
+.account-icon button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Contenu principal */
+.homepage-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-content h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem; /* Ajustez la taille selon vos besoins */
+  font-weight: 700; /* Gras */
+  color: #003366; /* Couleur élégante et professionnelle */
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+
+.logo-container-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Ajoute de l'espace sous le logo */
+}
+
+.logo-main {
+  width: 150px; /* Ajustez la taille selon vos besoins */
+  height: auto; /* Garde les proportions du logo */
+}
+
+.homepage-content h1 {
+  text-align: center; /* Centre le titre */
+  margin-top: 0; /* Supprime un éventuel espace au-dessus du titre */
+}
+.account-icon-container {
+  display: flex;
+  flex-direction: column; /* Place l'icône au-dessus du texte */
+  justify-content: center; /* Aligne verticalement les éléments */
+  align-items: center; /* Aligne horizontalement l'icône et le texte */
+  gap: 5px; /* Espace entre l'icône et le texte */
+  text-align: center; /* S'assure que le texte reste centré */
+}
+
+.account-text {
+  font-size: 14px; /* Taille légèrement plus grande pour être lisible */
+  font-family: 'Arial', sans-serif; /* Police moderne et propre */
+  font-weight: bold; /* Gras pour le rendre plus visible */
+  color: #fff; /* Couleur qui contraste avec l'arrière-plan */
+}

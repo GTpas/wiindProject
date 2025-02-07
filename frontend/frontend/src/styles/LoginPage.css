@@ -1,0 +1,115 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.login-form {
+  width: 300px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+/* Conteneur principal */
+.login-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garantit que la page occupe toute la hauteur */
+}
+
+/* Contenu principal (formulaire) */
+.login-main-content {
+  flex: 1; /* Prend tout l'espace disponible entre le header et le footer */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centre verticalement */
+  align-items: center; /* Centre horizontalement */
+  background-color: #f4f4f4; /* Couleur d'arrière-plan */
+}
+
+/* Formulaire de connexion */
+.login-form {
+  width: 300px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.login-form input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Header */
+.homepage-header {
+  background-color: #003366; /* Couleur d'arrière-plan */
+  padding: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* Espace entre le logo et l'icône */
+  align-items: center;
+}
+
+

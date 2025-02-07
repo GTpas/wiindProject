@@ -1,0 +1,31 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+db.sqlite3
+venv/
+.env
+/media/
+
+# React/Node.js
+node_modules/
+dist/
+build/
+.cache/
+.eslintcache
+package-lock.json
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Environnements
+.env.local
+.env.development
+.env.production
+
+# Autre
+.DS_Store
+*.swp
