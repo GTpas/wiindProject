@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
 import LoginIcon from "@mui/icons-material/Login";
@@ -7,11 +7,17 @@ import "../styles/Footer.css";
 
 const Footer = ({ activeTab, setActiveTab }) => {
   const navigate = useNavigate();
+  const location = useLocation(); // Récupérer l'URL actuelle
 
   const handleNavigation = (route) => {
     setActiveTab(route);
     navigate(route);
   };
+
+    // Ne pas afficher le footer sur certaines pages (ex: HomePage)
+  if (location.pathname === "/") {
+    return null;
+  }
 
   return (
     <footer className="footer">

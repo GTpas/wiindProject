@@ -1,0 +1,18 @@
+.verification-container {
+  display: flex;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.verification-paper {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.MuiCircularProgress-root {
+  color: #4caf50;
+} 

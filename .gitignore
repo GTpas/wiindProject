@@ -4,9 +4,14 @@
 *.pyc
 __pycache__/
 db.sqlite3
+db.sqlite3-journal
 venv/
 .env
 /media/
+staticfiles/
+.venv/
+controle_images/
+avatars/
 
 # React/Node.js
 node_modules/
@@ -15,17 +20,27 @@ build/
 .cache/
 .eslintcache
 package-lock.json
+frontend/build/
+frontend/node_modules/
 
 # IDE
 .idea/
 .vscode/
 *.iml
+*.code-workspace
+.history/
 
 # Environnements
 .env.local
 .env.development
 .env.production
+env/
+ENV/
 
 # Autre
 .DS_Store
 *.swp
+*.bak
+*.tmp
+*.temp
+Thumbs.db

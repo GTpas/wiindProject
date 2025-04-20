@@ -1,38 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
+import { Box, Button, Typography, Container } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import "../styles/HomePage.css";
-import "../styles/Footer.css";
-import Footer from "./Footer";
-import LoginIcon from "@mui/icons-material/Login";
 
-const HomePage = () => {
-  const [activeTab, setActiveTab] = useState("/");
+export default function HomePage() {
   const navigate = useNavigate();
 
+  const handleSignIn = () => {
+    navigate("/signin");
+  };
+
+  const handleSignUp = () => {
+    navigate("/signup");
+  };
+
   return (
-    <div className="homepage">
-      {/* En-tête */}
-      <header className="homepage-header">
-        <div className="logo-container">
-          <img src={process.env.PUBLIC_URL + "../assets/Logo_WIND.png"} alt="Logo associé" className="logo" />
-        </div>
-        <div className="account-icon-container">
-          <button className="account-button" onClick={() => navigate("/login")}>
-            <LoginIcon className="account-icon" />
-          </button>
-          <p className="account-text">Connexion / Inscription</p>
-        </div>
-      </header>
-
-      {/* Contenu principal */}
-      <main className="homepage-content">
-        <h1>Project WIND 2025</h1>
-      </main>
-
-      {/* Footer commun */}
-      <Footer activeTab="home" setActiveTab={setActiveTab} />
-    </div>
+    <Container maxWidth="sm" style={{ textAlign: "center", marginTop: "100px" }}>
+      <Typography variant="h4" gutterBottom>
+        Bienvenue sur WIIND APP !
+      </Typography>
+      <Typography variant="body1" gutterBottom>
+        Connectez-vous ou créez un compte pour commencer.
+      </Typography>
+      <Box mt={4}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleSignIn}
+          style={{ marginRight: "10px" }}
+        >
+          Se connecter
+        </Button>
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={handleSignUp}
+        >
+          S'inscrire
+        </Button>
+      </Box>
+    </Container>
   );
-};
-
-export default HomePage;
+}
