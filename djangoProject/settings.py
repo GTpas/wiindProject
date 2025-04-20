@@ -1,14 +1,20 @@
-"""
-Django settings for djangoProject project.
-"""
-
 from pathlib import Path
 from datetime import timedelta
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-01p^#zjar3%odw@&@m%db!v@6127ckehe^9eos4w3hag1-wtg*'
-DEBUG = True
+SECRET_KEY = 'default-insecure-key-replace-in-production'
+DEBUG = False
+GOOGLE_CLIENT_ID = ''
+GOOGLE_CLIENT_SECRET = ''
+EMAIL_HOST_PASSWORD = ''
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
@@ -18,12 +24,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  # Requis pour django-allauth
+    'django.contrib.sites',  
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
     'WIND',
-    # Django AllAuth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -38,12 +43,11 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
 
-# Configuration Google OAuth
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': '154290529171-6ahfbu70u3e41k922lr1glmnh3lqjfs8.apps.googleusercontent.com',
-            'secret': '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',
+            'client_id': GOOGLE_CLIENT_ID,
+            'secret': GOOGLE_CLIENT_SECRET,
             'key': ''
         },
         'SCOPE': [
@@ -81,7 +85,6 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',  # Nouveau middleware pour allauth
 ]
 
-# Configuration CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
@@ -92,7 +95,6 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
 ]
 
-# Configuration des en-têtes CORS
 CORS_ALLOW_HEADERS = [
     'accept',
     'accept-encoding',
@@ -106,7 +108,6 @@ CORS_ALLOW_HEADERS = [
     'cookie',
 ]
 
-# Configuration des méthodes CORS
 CORS_ALLOW_METHODS = [
     'DELETE',
     'GET',
@@ -116,15 +117,13 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 
-# Configuration de la session
 SESSION_COOKIE_SAMESITE = 'Lax'
-SESSION_COOKIE_SECURE = False  # Mettre à True en production
+SESSION_COOKIE_SECURE = False  
 CSRF_COOKIE_SAMESITE = 'Lax'
-CSRF_COOKIE_SECURE = False  # Mettre à True en production
+CSRF_COOKIE_SECURE = False  
 CSRF_COOKIE_HTTPONLY = False
 SESSION_COOKIE_HTTPONLY = True
 
-# Configuration AllAuth
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
@@ -138,7 +137,6 @@ ACCOUNT_LOGOUT_REDIRECT_URL = 'http://localhost:3000'
 ACCOUNT_ADAPTER = 'WIND.adapters.CustomAccountAdapter'
 SOCIALACCOUNT_ADAPTER = 'WIND.adapters.CustomSocialAccountAdapter'
 
-# URLs de redirection OAuth2
 OAUTH2_REDIRECT_URI = 'http://localhost:3000/google-callback'
 OAUTH2_CALLBACK_URL = 'http://localhost:3000/google-callback'
 
@@ -189,20 +187,16 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Configuration de l'URL du site
 SITE_URL = 'http://localhost:3000'
 
-# Configuration des emails - Gmail actif
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'noreplywiind2025@gmail.com'
-EMAIL_HOST_PASSWORD = 'wfarkhewnnvugjsg'  # Mot de passe d'application sans espaces
+EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD  
 DEFAULT_FROM_EMAIL = 'noreplywiind2025@gmail.com'
 
-# Configuration console (commentée)
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -210,14 +204,12 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
-# Configuration des médias
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'WIND.Utilisateur'
 
-# Configuration dj-rest-auth
 REST_AUTH = {
     'USER_DETAILS_SERIALIZER': 'WIND.serializers.user_serializers.UserDetailsSerializer',
     'USE_JWT': True,
